@@ -1,0 +1,200 @@
+@font-face {
+    src: url('../media/Univers\ 85\ Extra\ Black\ Regular.otf');
+    font-family: 'univers85_extra_black';
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    src: url('../media/Tanseek Modern Pro Arabic Book.otf');
+    font-family: 'Tanseek_Modern_Pro_Arabic_Book';
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body{
+    margin: 0;
+}
+articleTwo,
+aside,
+article {
+    padding: .5rem;
+    font-family: Tanseek_Modern_Pro_Arabic_Book;
+    font-size: 25px;
+}
+
+article {
+    background-color: #e07b1c;
+    padding: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+p {
+    justify-content: space-between;
+
+}
+
+#wrapper {
+    display: grid;
+    height: 200vh;
+    grid-template-rows: 1fr 2fr 10fr 2fr 1fr;
+    grid-template-areas:
+        "mainImage"
+        "sidebar"
+        "articleTwo"
+        "content"
+        "footer"
+        "red"
+}
+
+
+@media screen and (min-width: 760px) {
+    #wrapper {
+        grid-template-rows: 50% auto 20% 10%;
+        grid-template-columns: 1fr 30% 30%;
+        grid-template-areas:
+            "mainImage mainImage sidebar"
+            "articleTwo content sidebar"
+            "footer footer footer"
+            "footer footer footer"
+    }
+}
+
+red{
+    grid-area: red;
+}
+
+mainImage {
+    grid-area: mainImage;
+}
+
+articleTwo {
+    margin-left: 50px;
+    grid-area: articleTwo;
+    padding-top: 40px;
+    overflow: auto;
+}
+
+footer {
+    grid-area: footer;
+}
+
+h1,h2 {
+    margin-top: 0%;
+    font-size: 50px;
+    font-family: univers85_extra_black;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 30px;
+}
+
+li::before {
+    content: "■";
+    display: inline-block;
+    width: 1em;
+    margin-left: 1px;
+    margin-top: 10px;
+    color: red;
+}
+
+article {
+    grid-area: content;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+aside {
+    grid-area: sidebar;
+    margin-left: 20px;
+    text-align: left;
+    margin-right: 10%;
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 760px) {
+    aside {
+        margin-top: 30%;
+    }
+}
+
+.image {
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    grid-area: footer;
+}
+
+.red {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    margin-right: 100px;
+    overflow: auto;
+    color: white;
+    font-family: Tanseek_Modern_Pro_Arabic_Book;
+    font-size: 15px;
+    height: 60vh;
+}
+
+.blue {
+    padding: 50px;
+}
+
+.container div {
+    padding: 20px;
+    flex: 1;
+}
+
+
+.secondImage {
+    transform: rotate(15deg);
+    width: 100%;
+}
+
+.secondImage img {
+    margin-left: 15%;
+}
+
+@media (max-width: 760px) {
+    aside {
+        margin-top: 30%;
+    }
+
+    .secondImage {
+        transform: rotate(90deg);
+        width: 100%;
+    }
+
+    articleTwo {
+        margin-left: 50px;
+        grid-area: articleTwo;
+        padding-top: 40px;
+        overflow: visible;
+    }
+
+    .secondImage img {
+        transform: rotate(-90deg);
+        height: 90%;
+    }
+}
