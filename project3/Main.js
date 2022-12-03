@@ -9,6 +9,7 @@ function init() {
 }
 
 function update() {
+	this.scroller.moveViewportXBy(this.scrollSpeed);
 
     // Call update method and move at specified speed
     layer2.update(.3);

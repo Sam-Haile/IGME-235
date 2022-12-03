@@ -6,10 +6,22 @@ function Floors() {
 
     this.slices = [];
 
-    this.createTestMap();
+    //this.createTestMap();
+
+    // Store viewports current x-position
+    this.viewportX = 0;
+    this.viewportSliceX = 0;
 }
 
 Floors.prototype = Object.create(PIXI.Container.prototype);
+
+// Width of viewport
+Floors.VIEWPORT_WIDTH = 928;
+// Determines how many floor slices can be shown at a time
+Floors.VIEWPORT_NUM_SLICES = Math.ceil(Floors.VIEWPORT_WIDTH / FloorSlice.WIDTH) + 1;
+
+Floors.prototype.setViewportX = function (viewportX) {
+};
 
 Floors.prototype.addSlice = function (sliceType, y) {
     var slice = new FloorSlice(sliceType, y);
